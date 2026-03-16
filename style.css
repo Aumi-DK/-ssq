@@ -86,6 +86,19 @@ p.sub {
 .toggle input:checked + .pill .thumb {
   transform: translateX(20px);
 }
+.select select {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  color: var(--text);
+  outline: none;
+}
+[data-theme="dark"] .select select {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+}
 .checker {
   display: flex;
   gap: 12px;
