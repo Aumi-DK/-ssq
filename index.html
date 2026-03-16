@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>双色球 번호 추천기</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="frame">
+    <h1>双色球 번호 추천기</h1>
+    <p class="sub">1~33 사이에서 빨간 공 6개, 1~16 사이에서 파란 공 1개를 무작위 추천합니다.</p>
+
+    <div class="controls">
+      <button id="generate">추천 번호 생성</button>
+      <button id="copy" class="secondary">클립보드로 복사</button>
+      <div class="slider">
+        <label for="count">세트 개수: <span id="countLabel">3</span>개</label>
+        <input type="range" id="count" min="1" max="8" value="3">
+      </div>
+      <label class="toggle">
+        <input type="checkbox" id="themeToggle">
+        <span class="pill">
+          <span class="thumb"></span>
+        </span>
+        <span class="toggle-label">다크 모드</span>
+      </label>
+    </div>
+
+    <div class="checker">
+      <div class="group">
+        <label>당첨 빨간 공 (6개, 쉼표/공백 구분)</label>
+        <input type="text" id="winReds" placeholder="예: 3,8,11,22,25,30">
+      </div>
+      <div class="group short">
+        <label>당첨 파란 공 (1개)</label>
+        <input type="number" id="winBlue" min="1" max="16" placeholder="1~16">
+      </div>
+      <button id="check" class="ghost">당첨 확인</button>
+    </div>
+
+    <div class="results" id="results"></div>
+    <div class="helper">Tip: 버튼을 눌러 새로운 조합을 바로 만들어 보세요.</div>
+    <footer>참고: 추천 번호는 재미용이며 당첨을 보장하지 않습니다.</footer>
+  </div>
+  <canvas id="confetti"></canvas>
+
+  <section class="contact">
+    <div class="frame contact-card">
+      <h2>문의하기</h2>
+      <p class="sub">피드백이나 개선 아이디어가 있다면 메시지를 남겨주세요.</p>
+      <form id="contactForm" action="https://formspree.io/f/xpqyyzwg" method="POST">
+        <div class="grid">
+          <label>이메일 (답변용)
+            <input type="email" name="email" placeholder="you@example.com" required>
+          </label>
+          <label>이름 / 별명
+            <input type="text" name="name" placeholder="홍길동">
+          </label>
+        </div>
+        <label>메시지
+          <textarea name="message" rows="4" placeholder="원하시는 기능이나 버그 제보를 적어주세요." required></textarea>
+        </label>
+        <div class="contact-actions">
+          <button type="submit" class="secondary">보내기</button>
+          <span id="contactStatus" class="contact-status"></span>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
